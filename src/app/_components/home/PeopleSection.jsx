@@ -7,7 +7,7 @@ function PeopleSection() {
 	return (
 		<section>
 			<div className="max-w-7xl px-2 mx-auto">
-				<div className="w-full py-16 flex flex-col lg:flex-row lg:items-stretch lg:justify-between lg:gap-4">
+				<div className="w-full pt-16 pb-4 lg:py-20 flex flex-col lg:flex-row lg:items-stretch lg:justify-between lg:gap-4">
 					<div className="w-full max-w-[400px] mx-auto relative z-10 md:max-w-xl">
 						<Image
 							src={PeopleLarge}
