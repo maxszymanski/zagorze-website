@@ -1,4 +1,5 @@
 import CouncilMember from '../ui/CouncilMember'
+// import Rys from '@/assets/rys.jpg'
 
 function Council() {
 	return (

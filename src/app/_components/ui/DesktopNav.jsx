@@ -16,9 +16,6 @@ function DesktopNav() {
 					Sołectwo Zagórze
 				</Link>
 				<div className="flex items-center gap-3 xl:gap-5">
-					<NavigationLink href="/" restClass="text-nowrap">
-						Strona główna
-					</NavigationLink>
 					<NavigationLink href="/historia">Historia </NavigationLink>
 					<div
 						className="w-full flex justify-center flex-col relative"
@@ -31,7 +28,7 @@ function DesktopNav() {
 							/>
 						</NavigationLink>
 						<div
-							className={`w-[200%] flex flex-col justify-center divide-y absolute -left-16 top-full rounded-lg divide-stone-200 border border-stone-200 ${isMoreNavOpen ? 'block' : 'hidden'} transition-all duration-1000 ease-in-out  bg-white`}>
+							className={`w-[200%] flex flex-col justify-center divide-y z-50 absolute -left-16 top-full rounded-lg divide-stone-200 border border-stone-200 ${isMoreNavOpen ? 'block' : 'hidden'} transition-all duration-1000 ease-in-out  bg-white`}>
 							<NavigationLink href="/">Gmina</NavigationLink>
 							<NavigationLink href="/">Powiat</NavigationLink>
 							<NavigationLink href="/">Parafia</NavigationLink>

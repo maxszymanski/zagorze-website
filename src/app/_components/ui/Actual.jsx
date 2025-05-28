@@ -8,7 +8,7 @@ function Actual() {
 			<p>Zaproszenie na tradycyjną wigilię dla mieszkańców naszego sołectwa</p>
 			<Link
 				href="/aktualnosci"
-				className="rounded-3xl border border-white/70 p-2 inline-block mt-7 w-fit relative z-50">
+				className="rounded-3xl border border-white/70 p-2 inline-block mt-7 w-fit relative z-50 hover:bg-white/20 duration-300 transition-colors">
 				Czytaj wszystko
 			</Link>
 			<HiOutlineInformationCircle className="absolute text-white/30 bottom-3 right-8  z-40 size-24 rotate-[30deg]" />

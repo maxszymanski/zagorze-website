@@ -39,7 +39,9 @@ function Navigation({ isNavOpen }) {
 					</div>
 					<NavigationLink href="/">Galeria</NavigationLink>
 					<NavigationLink href="/">Aktualności</NavigationLink>
-					<NavigationLink href="/">Kontakt</NavigationLink>
+					<NavigationLink href="/" restClass="border-b border-stone-200">
+						Kontakt
+					</NavigationLink>
 				</div>
 			</div>
 		</nav>

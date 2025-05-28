@@ -2,12 +2,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Test from '@/assets/test.png'
 
-function NewsCard() {
+function NewsCard({ large = false }) {
 	return (
 		<Link
 			href="/news"
-			className="bg-white shadow-lg shadow-gray-300  pb-4  w-full border border-gray-200 rounded-xl hover:shadow-gray-500  transition-shadow duration-300 ease-in-out flex flex-col  max-w-[400px]  mx-auto lg:max-w-full lg:flex-row lg:gap-4 lg:pb-0 lg:items-stretch xl:gap-12">
-			<div className="w-full max-w-[400px] mx-auto relative z-10 ">
+			className={`bg-white shadow-lg shadow-gray-300  pb-4  w-full border border-gray-200 rounded-xl hover:shadow-gray-500  transition-shadow duration-300 ease-in-out flex flex-col    mx-auto  ${large ? 'max-w-[400px] md:min-w-[350px] lg:max-w-[570px]' : 'max-w-[400px] lg:max-w-full lg:flex-row lg:gap-4 lg:pb-0 lg:items-stretch xl:gap-12'}`}>
+			<div className={`w-full  mx-auto relative z-10`}>
 				<Image src={Test} height={522} width={400} alt="Zdjęcie artykułu" className="rounded-t-xl lg:hidden" />
 				<Image
 					src={Test}
