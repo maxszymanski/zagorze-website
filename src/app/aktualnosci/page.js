@@ -1,3 +1,4 @@
+import Footer from '../_components/home/Footer'
 import DesktopNav from '../_components/ui/DesktopNav'
 import MobileNav from '../_components/ui/MobileNav'
 import MoreNews from '../_components/ui/MoreNews'
@@ -31,6 +32,7 @@ function page() {
 					</div>
 				</section>
 			</main>
+			<Footer />
 		</>
 	)
 }

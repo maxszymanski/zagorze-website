@@ -1,6 +1,5 @@
 import { Nunito_Sans } from 'next/font/google'
 import './globals.css'
-import Footer from './_components/home/Footer'
 
 const poppins = Nunito_Sans({
 	subsets: ['latin'],
@@ -20,7 +19,6 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<body className={`${poppins.className} relative h-full min-h-dvh lg:min-h-screen bg-white`}>
 				{children}
-				<Footer />
 			</body>
 		</html>
 	)
