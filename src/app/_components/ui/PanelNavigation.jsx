@@ -1,4 +1,4 @@
-import { MdArticle, MdDashboard } from 'react-icons/md'
+import { MdArticle, MdDashboard, MdSignpost } from 'react-icons/md'
 import { IoMdSettings } from 'react-icons/io'
 import { FaPlus } from 'react-icons/fa6'
 import PanelLinkNav from './PanelLinkNav'
@@ -13,6 +13,10 @@ function PanelNavigation() {
 				<PanelLinkNav href="/panel">
 					<MdDashboard className="size-7 flex-shrink-0 lg:mr-4 lg:size-8" />{' '}
 					<span className="hidden lg:block">Panel</span>
+				</PanelLinkNav>
+				<PanelLinkNav href="/konto/moje-kursy/dodane">
+					<MdSignpost className="size-7 flex-shrink-0 lg:mr-4 lg:size-8" />{' '}
+					<span className="hidden lg:block">Na Skróty</span>
 				</PanelLinkNav>
 				<PanelLinkNav href="/konto/moje-kursy/dodane">
 					<MdArticle className="size-7 flex-shrink-0 lg:mr-4 lg:size-8" />{' '}

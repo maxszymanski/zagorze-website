@@ -37,7 +37,7 @@ function ContactSection() {
 							<Link
 								href="mailto:solectwozagorze@o2.pl"
 								className=" p-2 hover:text-yellow-400 duration-300 transition-colors text-gray-700 font-medium xl:text-lg">
-								zagorzesolectwo@op.pl
+								zagorzesolectwo@o2.pl
 							</Link>
 						</div>
 					</div>

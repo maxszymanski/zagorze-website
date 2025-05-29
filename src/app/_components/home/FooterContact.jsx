@@ -10,7 +10,7 @@ function FooterContact() {
 					<Link
 						href="mailto:solectwozagorze@o2.pl"
 						className="mb-2 p-2 hover:text-yellow-400 duration-300 transition-colors flex items-center gap-3">
-						<CiMail className="size-6" /> zagorzesolectwo@op.pl
+						<CiMail className="size-6" /> zagorzesolectwo@o2.pl
 					</Link>
 				</li>
 				<li>
