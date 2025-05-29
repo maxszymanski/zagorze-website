@@ -5,6 +5,7 @@ import GallerySection from './_components/home/GallerySection'
 import NewsSection from './_components/home/NewsSection'
 import ContactUsSection from './_components/home/ContactUsSection'
 import PeopleSection from './_components/home/PeopleSection'
+import Footer from './_components/home/Footer'
 
 export default function Home() {
 	return (
@@ -18,6 +19,7 @@ export default function Home() {
 				<Council />
 				<ContactUsSection />
 			</main>
+			<Footer />
 		</>
 	)
 }
