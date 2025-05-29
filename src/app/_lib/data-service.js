@@ -1,8 +1,6 @@
-import { createClient } from '../utils/supabase/server'
+import { supabase } from '../utils/supabase/server-public'
 
 export async function getPosts() {
-	const supabase = await createClient()
-
 	const { data, error } = await supabase
 		.from('posts')
 		.select('id, created_at, title, description, slug, image')
