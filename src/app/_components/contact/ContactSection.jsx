@@ -35,9 +35,9 @@ function ContactSection() {
 						<div className="text-center ">
 							<p className="text-gray-900 font-semibold text-xl mb-2">E-mail</p>
 							<Link
-								href="mailto:solectwozagorze@o2.pl"
+								href="mailto:zagorzesolectwo@op.pl"
 								className=" p-2 hover:text-yellow-400 duration-300 transition-colors text-gray-700 font-medium xl:text-lg">
-								zagorzesolectwo@o2.pl
+								zagorzesolectwo@op.pl
 							</Link>
 						</div>
 					</div>

@@ -8,9 +8,9 @@ function FooterContact() {
 			<ul className="flex flex-col items-center sm:items-start">
 				<li>
 					<Link
-						href="mailto:solectwozagorze@o2.pl"
+						href="mailto:zagorzesolectwo@op.pl"
 						className="mb-2 p-2 hover:text-yellow-400 duration-300 transition-colors flex items-center gap-3">
-						<CiMail className="size-6" /> zagorzesolectwo@o2.pl
+						<CiMail className="size-6" /> zagorzesolectwo@op.pl
 					</Link>
 				</li>
 				<li>
