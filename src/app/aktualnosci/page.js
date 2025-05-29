@@ -5,6 +5,8 @@ import MoreNews from '../_components/ui/MoreNews'
 import NewsCard from '../_components/ui/NewsCard'
 import { getPosts } from '../_lib/data-service'
 
+export const revalidate = 3600
+
 async function page() {
 	const posts = await getPosts()
 

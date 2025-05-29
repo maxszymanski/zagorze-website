@@ -1,6 +1,8 @@
 import { getPosts } from '@/app/_lib/data-service'
 import NewsCard from '../ui/NewsCard'
 
+export const revalidate = 3600
+
 async function NewsSection() {
 	const posts = await getPosts()
 
