@@ -3,8 +3,11 @@ import DesktopNav from '../_components/ui/DesktopNav'
 import MobileNav from '../_components/ui/MobileNav'
 import MoreNews from '../_components/ui/MoreNews'
 import NewsCard from '../_components/ui/NewsCard'
+import { getPosts } from '../_lib/data-service'
 
-function page() {
+async function page() {
+	const posts = await getPosts()
+
 	return (
 		<>
 			<header className="w-full relative z-10">
@@ -22,13 +25,12 @@ function page() {
 					</h1>
 					<div className="max-w-7xl px-4 mx-auto md:flex pt-12 lg:pt-20 gap-7 w-full relative">
 						<div className=" w-full flex flex-col gap-8 lg:gap-12">
-							<NewsCard large />
-							<NewsCard large />
-							<NewsCard large />
-							<NewsCard large />
+							{posts.map(post => (
+								<NewsCard large key={post.id} post={post} />
+							))}
 						</div>
 
-						<MoreNews />
+						<MoreNews posts={posts} />
 					</div>
 				</section>
 			</main>

@@ -1,6 +1,6 @@
 import NavigationLink from './NavigationLink'
 
-function MoreNews() {
+function MoreNews({ posts }) {
 	return (
 		<div className="w-full pt-12 md:pt-0 flex-shrink-1 md:max-w-[370px] xl:max-w-[470px] md:sticky md:top-6">
 			<div className="flex items-center justify-center gap-3 pb-6">
@@ -10,12 +10,18 @@ function MoreNews() {
 			</div>
 
 			<ul className="w-full divide-y divide-stone-300  flex flex-col justify-start">
+				{posts.map(post => (
+					<NavigationLink
+						key={post.id}
+						href={`/aktualnosci/${post.slug}`}
+						restClass="!text-left truncate overflow-ellipsis whitespace-nowrap   ">
+						{post.title}
+					</NavigationLink>
+				))}
 				<NavigationLink href="/" restClass="!text-left truncate overflow-ellipsis whitespace-nowrap   ">
 					Wigilia w Sołectwie
 				</NavigationLink>
-				<NavigationLink href="/" restClass="!text-left truncate overflow-ellipsis whitespace-nowrap   ">
-					Wybory sołtysa i rady sołeckiej na kadencję 2024 – 2029
-				</NavigationLink>
+
 				<NavigationLink href="/" restClass="!text-left truncate overflow-ellipsis whitespace-nowrap   ">
 					Dzień Dziecka
 				</NavigationLink>
