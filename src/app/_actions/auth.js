@@ -26,3 +26,25 @@ export async function logout() {
 
 	redirect('/')
 }
+
+export async function getUserAccount() {
+	const supabase = await createClient()
+
+	const { data, error } = await supabase.auth.getUser()
+
+	if (error) {
+		throw new Error(error.message)
+	}
+
+	return data.user
+}
+
+export async function updatePassword(updateData) {
+	const supabase = await createClient()
+
+	const { error } = await supabase.auth.updateUser({ password: updateData.password })
+
+	if (error) {
+		return { error: 'Wystąpił problem podczas zmiany hasła' }
+	}
+}

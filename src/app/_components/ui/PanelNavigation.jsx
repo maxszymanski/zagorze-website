@@ -14,19 +14,19 @@ function PanelNavigation() {
 					<MdDashboard className="size-7 flex-shrink-0 lg:mr-4 lg:size-8" />{' '}
 					<span className="hidden lg:block">Panel</span>
 				</PanelLinkNav>
-				<PanelLinkNav href="/konto/moje-kursy/dodane">
+				<PanelLinkNav href="/panel/na-skroty">
 					<MdSignpost className="size-7 flex-shrink-0 lg:mr-4 lg:size-8" />{' '}
 					<span className="hidden lg:block">Na Skróty</span>
 				</PanelLinkNav>
-				<PanelLinkNav href="/konto/moje-kursy/dodane">
+				<PanelLinkNav href="/panel/posty">
 					<MdArticle className="size-7 flex-shrink-0 lg:mr-4 lg:size-8" />{' '}
 					<span className="hidden lg:block">Moje posty</span>
 				</PanelLinkNav>
-				<PanelLinkNav href="/konto/dodaj-kurs">
+				<PanelLinkNav href="/panel/dodaj-post">
 					<FaPlus className="size-7 flex-shrink-0 lg:mr-4 lg:size-8" />{' '}
 					<span className="hidden lg:block">Dodaj post</span>
 				</PanelLinkNav>
-				<PanelLinkNav href="/konto/ustawienia">
+				<PanelLinkNav href="/panel/ustawienia">
 					<IoMdSettings className="size-7 flex-shrink-0 lg:mr-4 lg:size-8" />
 					<span className="hidden lg:block">Ustawienia</span>
 				</PanelLinkNav>
