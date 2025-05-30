@@ -28,7 +28,7 @@ async function page() {
 						</div>
 					)}
 					<div className="w-full flex flex-col overflow-x-auto">
-						{posts.length > 0 ? (git pull o
+						{posts.length > 0 ? (
 							posts.map(post => {
 								const format = formattedDate(post.created_at)
 								return (
