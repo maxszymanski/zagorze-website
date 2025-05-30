@@ -42,6 +42,9 @@ export async function getUserAccount() {
 export async function updatePassword(updateData) {
 	const supabase = await createClient()
 
+	const { error: authError } = await supabase.auth.getUser()
+	if (authError) return { error: 'Wystąpił problem podczas zmiany hasła' }
+
 	const { error } = await supabase.auth.updateUser({ password: updateData.password })
 
 	if (error) {

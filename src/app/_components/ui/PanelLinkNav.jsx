@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 
 function PanelLinkNav({ href = '/', children, restClass = '' }) {
 	const pathname = usePathname()
-	const isActive = pathname.includes(href) && href != '/konto'
+	const isActive = pathname.includes(href) && href != '/panel'
 
 	return (
 		<li className="list-none">

@@ -1,6 +1,8 @@
 import { getPostBySlug, getPosts } from '@/app/_lib/data-service'
 import { blurImage } from '@/app/utils/blurImage'
+import { formattedDate } from '@/app/utils/helpers'
 import Image from 'next/image'
+import { FaRegCalendarAlt } from 'react-icons/fa'
 
 export async function generateStaticParams() {
 	const posts = await getPosts()
@@ -13,6 +15,8 @@ export async function generateStaticParams() {
 async function page({ params }) {
 	const { slug } = await params
 	const post = await getPostBySlug(slug)
+
+	const format = formattedDate(post.created_at)
 
 	return (
 		<div className=" w-full">
@@ -32,7 +36,9 @@ async function page({ params }) {
 					/>
 				</div>
 				<div className="w-full mt-4">
-					<p className="text-sm text-gray-700 font-semibold  text-left mb-6">14 Maja 2025</p>
+					<p className="text-sm text-gray-700 items-center inline-flex font-semibold  text-left mb-6">
+						<FaRegCalendarAlt className="mr-2 size-4 text-yellow-600 mb-0.5" /> {format}
+					</p>
 					<p className="text-gray-800 leading-[170%] text-base md:text-lg font-medium  mt-2">
 						{post.content}
 					</p>
