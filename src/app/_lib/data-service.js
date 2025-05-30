@@ -12,3 +12,11 @@ export async function getPosts() {
 	}
 	return data
 }
+export async function getPostBySlug(slug) {
+	const { data, error } = await supabase.from('posts').select('*').eq('slug', slug).single()
+
+	if (error) {
+		throw new Error('Post nie został znaleziony')
+	}
+	return data
+}
