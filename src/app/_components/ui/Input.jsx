@@ -1,4 +1,4 @@
-function Input({ error, message, rest, formRegister, children, name, required, label, type, disabled }) {
+function Input({ error, message, rest, formRegister, children, name, required, label, type, disabled, placeholder }) {
 	return (
 		<div className={` flex flex-col   md:max-w-md' w-full`}>
 			{label && (
@@ -19,6 +19,7 @@ function Input({ error, message, rest, formRegister, children, name, required, l
 					{...rest}
 					type={type}
 					disabled={disabled}
+					placeholder={placeholder}
 				/>
 				{error && <span className="text-sm  text-red-500 mt-2 pl-1">{message}</span>}
 			</div>

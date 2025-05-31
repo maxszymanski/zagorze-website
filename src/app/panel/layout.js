@@ -33,7 +33,7 @@ async function layout({ children }) {
 						WebkitBoxShadow: '0px 2px 12px 0px #bae6fd',
 						MozBoxShadow: '0px 2px 12px 0px #bae6fd',
 						boxShadow: '0px 2px 12px 0px #bae6fd',
-						fontFamily: 'poppins',
+						fontFamily: 'nunito Sans',
 						textAlign: 'center',
 						width: '318px',
 					},

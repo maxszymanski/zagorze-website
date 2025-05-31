@@ -40,7 +40,7 @@ async function page({ params }) {
 						<FaRegCalendarAlt className="mr-2 size-4 text-yellow-600 mb-0.5" /> {format}
 					</p>
 					<p className="text-gray-800 leading-[170%] text-base md:text-lg font-medium  mt-2">
-						{post.content}
+						{post.long_description}
 					</p>
 				</div>
 			</div>
