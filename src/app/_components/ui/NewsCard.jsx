@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { formattedDate } from '@/app/utils/helpers'
 import { blurImage } from '@/app/utils/blurImage'
 
 function NewsCard({ large = false, post }) {
