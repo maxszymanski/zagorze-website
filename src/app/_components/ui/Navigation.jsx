@@ -13,7 +13,7 @@ function Navigation({ isNavOpen }) {
 			className={` bg-white  w-full  absolute top-0 left-0   z-20 ${isNavOpen ? 'translate-y-[49px]' : '-translate-y-full'} transition-transform duration-300 ease-in-out`}>
 			<div className=" max-w-7xl mx-auto w-full">
 				<div className="w-full flex flex-col   divide-y divide-stone-200">
-					<NavigationLink href="/">Historia sołectwa</NavigationLink>
+					<NavigationLink href="/historia">Historia sołectwa</NavigationLink>
 					<div className="w-full flex justify-center flex-col">
 						<NavigationLink restClass="flex items-center gap-2 justify-center" onClick={toogleMoreNavOpen}>
 							Na skróty{' '}
@@ -37,9 +37,9 @@ function Navigation({ isNavOpen }) {
 							</NavigationLink>
 						</div>
 					</div>
-					<NavigationLink href="/">Galeria</NavigationLink>
-					<NavigationLink href="/">Aktualności</NavigationLink>
-					<NavigationLink href="/" restClass="border-b border-stone-200">
+					<NavigationLink href="/galeria">Galeria</NavigationLink>
+					<NavigationLink href="/aktualnosci">Aktualności</NavigationLink>
+					<NavigationLink href="/kontakt" restClass="border-b border-stone-200">
 						Kontakt
 					</NavigationLink>
 				</div>
