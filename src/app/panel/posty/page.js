@@ -8,7 +8,7 @@ async function page() {
 	const posts = await getPosts()
 	return (
 		<section className="w-full px-4 lg:px-6 pb-8">
-			<h1 className="text-yellow-500 text-3xl text-center font-semibold mb-12 xl:mb-20">Aklualności</h1>
+			<h1 className="text-yellow-500 text-3xl text-center font-semibold mb-12 xl:mb-20">Aktualności</h1>
 			<div
 				className="flex flex-col justify-center items-center  w-full
 			">

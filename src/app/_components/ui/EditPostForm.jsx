@@ -11,6 +11,8 @@ import SubmitButton from './SubmitButton'
 import { updatePost } from '@/app/_actions/mutation'
 import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
+import DeleteButton from './DeleteButton'
+import useAppStore from '@/app/stores/store'
 
 export const addPostSchema = z.object({
 	title: z
@@ -44,6 +46,21 @@ function EditPostForm({ post }) {
 	const [content, setContent] = useState(template || '')
 
 	const [image, setImage] = useState(post.image || null)
+
+	const openModal = useAppStore(state => state.openModal)
+	const setOpenModal = useAppStore(state => state.setOpenModal)
+	const closeModal = useAppStore(state => state.closeModal)
+
+	const handleOpenDeletePostModal = e => {
+		e.preventDefault()
+		{
+			if (openModal === 'delete-post') {
+				closeModal()
+			} else {
+				setOpenModal('delete-post')
+			}
+		}
+	}
 
 	async function onSubmit(data) {
 		if (!image) {
@@ -164,7 +181,10 @@ function EditPostForm({ post }) {
 					error={errors?.description}
 					message={errors?.description?.message}
 				/>
-				<SubmitButton isSubmitting={isSubmitting} />
+				<div className="flex items-center justify-center gap-4 w-full md:max-w-5xl">
+					<SubmitButton isSubmitting={isSubmitting} />
+					<DeleteButton isSubmitting={isSubmitting} onDelete={handleOpenDeletePostModal} />
+				</div>
 			</form>
 		</>
 	)

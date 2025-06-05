@@ -1,11 +1,10 @@
 'use client'
 
-import Link from 'next/link'
 import NavigationLink from './NavigationLink'
 import { FaAngleDown } from 'react-icons/fa'
 import useAppStore from '@/app/stores/store'
 
-function Navigation({ isNavOpen }) {
+function Navigation({ isNavOpen, shorts }) {
 	const { isMoreNavOpen, toogleMoreNavOpen } = useAppStore()
 
 	return (
@@ -21,21 +20,19 @@ function Navigation({ isNavOpen }) {
 								className={`text-gray-600 mt-0.5 ${isMoreNavOpen ? '-rotate-180' : 'rotate-0'} transition-transform duration-300`}
 							/>
 						</NavigationLink>
-						<div
-							className={`w-full flex flex-col justify-center divide-y divide-stone-200 ${isMoreNavOpen ? 'h-fit  ' : 'h-0'} transition-all duration-1000 ease-in-out overflow-hidden bg-stone-100`}>
-							<NavigationLink href="/" restClass="border-t border-stone-200">
-								Gmina
-							</NavigationLink>
-							<NavigationLink href="/" restClass="">
-								Powiat
-							</NavigationLink>
-							<NavigationLink href="/" restClass="">
-								Parafia
-							</NavigationLink>
-							<NavigationLink href="/" restClass="">
-								Rozkład jazdy
-							</NavigationLink>
-						</div>
+						{shorts.length > 0 && (
+							<div
+								className={`w-full flex flex-col justify-center divide-y divide-stone-200 ${isMoreNavOpen ? 'h-fit  ' : 'h-0'} transition-all duration-1000 ease-in-out overflow-hidden bg-stone-100`}>
+								{shorts.map((short, idx) => (
+									<NavigationLink
+										key={short.id}
+										href={short.href}
+										restClass={`${idx === 0 ? 'border-t border-stone-200' : ''}`}>
+										{short.title}
+									</NavigationLink>
+								))}
+							</div>
+						)}
 					</div>
 					<NavigationLink href="/galeria">Galeria</NavigationLink>
 					<NavigationLink href="/aktualnosci">Aktualności</NavigationLink>

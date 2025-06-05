@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import { IoMenu, IoClose } from 'react-icons/io5'
 import Navigation from './Navigation'
 
-function MobileNav() {
+function MobileNav({ shorts }) {
 	const { isNavOpen, toggleNavigation, closeNavigation } = useAppStore()
 
 	const pathname = usePathname()
@@ -35,7 +35,7 @@ function MobileNav() {
 					</button>
 				</div>
 			</div>
-			<Navigation isNavOpen={isNavOpen} />
+			<Navigation isNavOpen={isNavOpen} shorts={shorts} />
 		</div>
 	)
 }

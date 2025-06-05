@@ -95,3 +95,26 @@ export async function updatePost(data, postId) {
 	revalidatePath(`/aktualnosci/${result.data.slug}`)
 	revalidatePath('/panel/posty')
 }
+
+export async function deletePost(postId, slug) {
+	const supabase = await createClient()
+
+	const { data: authData, error: authError } = await supabase.auth.getUser()
+	if (authError) return null
+
+	if (!authData.user) {
+		return { error: 'Użytkownik nie ma uprawnień do usunięcia tego postu' }
+	}
+
+	const { error } = await supabase.from('posts').delete().eq('id', postId)
+
+	if (error) {
+		if (error) {
+			return { error: 'Wystąpił problem przy usuwaniu postu' }
+		}
+	}
+	revalidatePath('/')
+	revalidatePath('/aktualnosci')
+	revalidatePath(`/aktualnosci/${slug}`)
+	revalidatePath('/panel/posty')
+}

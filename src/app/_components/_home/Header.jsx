@@ -1,15 +1,13 @@
 import HeaderImage from '@/assets/solectwo.png'
-import MobileNav from '../ui/MobileNav'
 import ButtonLink from '../ui/ButtonLink'
 import { LuHistory, LuNewspaper } from 'react-icons/lu'
 import ButtonVideo from '../ui/ButtonVideo'
-import DesktopNav from '../ui/DesktopNav'
+import Navs from '../ui/Navs'
 
 function Header() {
 	return (
 		<header className=" w-full relative z-10">
-			<MobileNav />
-			<DesktopNav />
+			<Navs />
 			<div className="w-full h-[900px] bg-top bg-cover" style={{ backgroundImage: `url(${HeaderImage.src})` }}>
 				<div className="px-4 max-w-7xl mx-auto w-full flex flex-col justify-evenly items-center h-full lg:flex-row">
 					<div className="w-full max-w-[730px] mx-auto">

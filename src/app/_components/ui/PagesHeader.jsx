@@ -1,12 +1,10 @@
-import DesktopNav from './DesktopNav'
-import MobileNav from './MobileNav'
 import HeaderImageLarge from '@/assets/header-large.webp'
+import Navs from './Navs'
 
 function PagesHeader({ titleOne, titleTwo, possition }) {
 	return (
 		<header className="w-full relative z-10 ">
-			<MobileNav />
-			<DesktopNav />
+			<Navs />
 			<div
 				className={`w-full h-[280px] md:h-[400px] relative z-10 bg-cover ${possition ? possition : 'bg-center'}`}
 				style={{ backgroundImage: `url(${HeaderImageLarge.src})` }}>

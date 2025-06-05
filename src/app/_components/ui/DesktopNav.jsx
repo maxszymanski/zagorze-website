@@ -4,7 +4,7 @@ import NavigationLink from './NavigationLink'
 import useAppStore from '@/app/stores/store'
 import { FaAngleDown } from 'react-icons/fa'
 
-function DesktopNav() {
+function DesktopNav({ shorts }) {
 	const { isMoreNavOpen, toogleMoreNavOpen } = useAppStore()
 
 	return (
@@ -27,15 +27,16 @@ function DesktopNav() {
 								className={`text-gray-600 mt-0.5 ${isMoreNavOpen ? '-rotate-180' : 'rotate-0'} transition-transform duration-300`}
 							/>
 						</NavigationLink>
-						<div
-							className={`w-[200%] flex flex-col justify-center divide-y z-50 absolute -left-16 top-full rounded-lg divide-stone-200 border border-stone-200 ${isMoreNavOpen ? 'block' : 'hidden'} transition-all duration-1000 ease-in-out  bg-white`}>
-							<NavigationLink href="/">Gmina</NavigationLink>
-							<NavigationLink href="/">Powiat</NavigationLink>
-							<NavigationLink href="/">Parafia</NavigationLink>
-							<NavigationLink href="/" r>
-								Rozkład jazdy
-							</NavigationLink>
-						</div>
+						{shorts.length > 0 && (
+							<div
+								className={`w-[200%] flex flex-col justify-center divide-y z-50 absolute -left-16 top-full rounded-lg divide-stone-200 border border-stone-200 ${isMoreNavOpen ? 'block' : 'hidden'} transition-all duration-1000 ease-in-out  bg-white`}>
+								{shorts.map(short => (
+									<NavigationLink key={short.id} href={short.href}>
+										{short.title}
+									</NavigationLink>
+								))}
+							</div>
+						)}
 					</div>
 					<NavigationLink href="/galeria">Galeria</NavigationLink>
 					<NavigationLink href="/aktualnosci">Aktualności</NavigationLink>
