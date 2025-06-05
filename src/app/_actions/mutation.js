@@ -1,6 +1,6 @@
 'use server'
 
-import { revalidatePath } from 'next/cache'
+import { revalidatePath, revalidateTag } from 'next/cache'
 import { createClient } from '../utils/supabase/server'
 
 export async function createPost(data) {
@@ -117,4 +117,52 @@ export async function deletePost(postId, slug) {
 	revalidatePath('/aktualnosci')
 	revalidatePath(`/aktualnosci/${slug}`)
 	revalidatePath('/panel/posty')
+}
+
+export async function createShort(data) {
+	const supabase = await createClient()
+
+	const { data: authData, error: authError } = await supabase.auth.getUser()
+	if (authError) return { error: 'Błąd autoryzacji' }
+
+	if (!authData.user) {
+		return { error: 'Nie można znaleźć użytkownika' }
+	}
+
+	const { error } = await supabase.from('shorts').insert([
+		{
+			...data,
+		},
+	])
+
+	if (error) {
+		return { error: `Niepoprawne dane w formularzu. ${error.message} ` }
+	}
+
+	revalidateTag('shorts')
+	revalidatePath('panel/na-skroty')
+	return { success: true }
+}
+
+export async function deleteShort(shortId) {
+	const supabase = await createClient()
+
+	const { data: authData, error: authError } = await supabase.auth.getUser()
+	if (authError) return { error: 'Błąd autoryzacji' }
+
+	if (!authData.user) {
+		return { error: 'Użytkownik nie ma uprawnień do usunięcia tego skrótu' }
+	}
+
+	const { error } = await supabase.from('shorts').delete().eq('id', shortId)
+
+	if (error) {
+		if (error) {
+			return { error: 'Wystąpił problem przy usuwaniu skrótu' }
+		}
+	}
+	revalidateTag('shorts')
+
+	revalidatePath('panel/na-skroty')
+	return { success: true }
 }

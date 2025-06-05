@@ -1,19 +1,18 @@
 import Footer from '../_components/home/Footer'
-import DesktopNav from '../_components/ui/DesktopNav'
-import MobileNav from '../_components/ui/MobileNav'
 import MoreNews from '../_components/ui/MoreNews'
-import { getPosts } from '../_lib/data-service'
+import Navs from '../_components/ui/Navs'
+import { getPosts, getShorts } from '../_lib/data-service'
 
 export const revalidate = 3600
 
 async function layout({ children }) {
 	const posts = await getPosts()
+	const shorts = await getShorts()
 
 	return (
 		<>
 			<header className="w-full relative z-10">
-				<MobileNav />
-				<DesktopNav />
+				<Navs />
 			</header>
 			<main>
 				<section className="bg-[#F7F6F6] py-12 lg:py-16 xl:py-20">
@@ -27,7 +26,7 @@ async function layout({ children }) {
 					<div className="max-w-7xl px-4 mx-auto md:flex pt-12 lg:pt-20 gap-7 w-full relative lg:gap-10  xl:px-8 ">
 						{children}
 
-						<MoreNews posts={posts} />
+						<MoreNews posts={posts} shorts={shorts} />
 					</div>
 				</section>
 			</main>

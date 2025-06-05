@@ -1,7 +1,7 @@
 import AddNewShort from '@/app/_components/ui/AddNewShort'
+import EditShort from '@/app/_components/ui/EditShort'
 import SettingsBox from '@/app/_components/ui/SettingsBox'
 import { getShorts } from '@/app/_lib/data-service'
-import Link from 'next/link'
 import { FaEdit } from 'react-icons/fa'
 
 async function page() {
@@ -46,13 +46,7 @@ async function page() {
 												<p>{short.href}</p>
 											</div>
 											<div className="w-10 px-2 mr-2">
-												<Link
-													className="block"
-													href={`/panel/edytuj-short/${short.id}`}
-													title="Edytuj post"
-													aria-label="Edytuj post">
-													<FaEdit className="size-6 xl:size-8 hover:text-yellow-600 text-yellow-500 duration-300 transition-colors" />
-												</Link>
+												<EditShort short={short} />
 											</div>
 										</div>
 									)

@@ -1,6 +1,6 @@
 import NavigationLink from './NavigationLink'
 
-function MoreNews({ posts }) {
+function MoreNews({ posts, shorts }) {
 	return (
 		<div className="w-full pt-12 md:pt-0 flex-shrink-1 md:max-w-[300px] xl:max-w-[400px] md:sticky md:top-6">
 			<div className="flex items-center justify-center gap-3 pb-6">
@@ -41,27 +41,14 @@ function MoreNews({ posts }) {
 				<div className="h-[1px] w-8 bg-gray-300"></div>
 			</div>
 			<ul className="w-full divide-y divide-stone-300  flex flex-col justify-start">
-				{/* {posts.map(post => (
+				{shorts.map(short => (
 					<NavigationLink
-						key={post.id}
-						href={`/aktualnosci/${post.slug}`}
-						restClass="!text-left truncate overflow-ellipsis whitespace-nowrap   ">
-						{post.title}
+						key={short.id}
+						href={short.href}
+						restClass="truncate overflow-ellipsis whitespace-nowrap">
+						{short.title}
 					</NavigationLink>
-				))} */}
-				<NavigationLink href="/" restClass="truncate overflow-ellipsis whitespace-nowrap   ">
-					Gmina
-				</NavigationLink>
-
-				<NavigationLink href="/" restClass=" truncate overflow-ellipsis whitespace-nowrap   ">
-					Powiat
-				</NavigationLink>
-				<NavigationLink href="/" restClass=" truncate overflow-ellipsis whitespace-nowrap  ">
-					Parafia
-				</NavigationLink>
-				<NavigationLink href="/" restClass=" truncate overflow-ellipsis whitespace-nowrap   ">
-					Rozkład jazdy
-				</NavigationLink>
+				))}
 			</ul>
 		</div>
 	)

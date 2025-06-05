@@ -29,7 +29,7 @@ export async function getPostById(id) {
 }
 
 export async function getShorts() {
-	const { data, error } = await supabase.from('shorts').select('*').order('title', { ascending: false })
+	const { data, error } = await supabase.from('shorts').select('*').order('id', { ascending: true })
 
 	if (error) {
 		return []
