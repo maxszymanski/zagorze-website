@@ -10,7 +10,6 @@ import EditorText from './EditorText'
 import SubmitButton from './SubmitButton'
 import { updatePost } from '@/app/_actions/mutation'
 import toast from 'react-hot-toast'
-import { useRouter } from 'next/navigation'
 import DeleteButton from './DeleteButton'
 import useAppStore from '@/app/stores/store'
 
@@ -42,7 +41,6 @@ function EditPostForm({ post }) {
 		defaultValues: { long_description: post.long_description || template },
 	})
 
-	const router = useRouter()
 	const [content, setContent] = useState(template || '')
 
 	const [image, setImage] = useState(post.image || null)
@@ -117,7 +115,6 @@ function EditPostForm({ post }) {
 			toast.error(result.error)
 		} else {
 			toast.success('Post został zaktualizowany')
-			router.push('/panel/posty')
 		}
 	}
 

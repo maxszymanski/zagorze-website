@@ -144,6 +144,33 @@ export async function createShort(data) {
 	return { success: true }
 }
 
+export async function updateShort(data, shortId) {
+	const supabase = await createClient()
+
+	const { data: authData, error: authError } = await supabase.auth.getUser()
+	if (authError) return { error: 'Błąd autoryzacji' }
+
+	if (!authData.user) {
+		return { error: 'Użytkownik nie ma uprawnień do edycji tego skrótu' }
+	}
+
+	const { error } = await supabase
+		.from('shorts')
+		.update({
+			...data,
+		})
+		.eq('id', shortId)
+
+	if (error) {
+		if (error) {
+			return { error: 'Wystąpił problem przy edycji skrótu' }
+		}
+	}
+	revalidateTag('shorts')
+	revalidatePath('panel/na-skroty')
+	return { success: true }
+}
+
 export async function deleteShort(shortId) {
 	const supabase = await createClient()
 

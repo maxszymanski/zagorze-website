@@ -1,3 +1,5 @@
+import PostContent from '@/app/_components/ui/PostContent'
+import Share from '@/app/_components/ui/Share'
 import { getPostBySlug, getPosts } from '@/app/_lib/data-service'
 import { blurImage } from '@/app/utils/blurImage'
 import { formattedDate } from '@/app/utils/helpers'
@@ -39,10 +41,9 @@ async function page({ params }) {
 					<p className="text-sm text-gray-700 items-center inline-flex font-semibold  text-left mb-6">
 						<FaRegCalendarAlt className="mr-2 size-4 text-yellow-600 mb-0.5" /> {format}
 					</p>
-					<p className="text-gray-800 leading-[170%] text-base md:text-lg font-medium  mt-2">
-						{post.long_description}
-					</p>
+					<PostContent content={post.long_description} />
 				</div>
+				<Share title={post.title} slug={post.slug} />
 			</div>
 		</div>
 	)

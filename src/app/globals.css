@@ -34,6 +34,44 @@ body {
 	animation: rotation 0.5s linear infinite reverse;
 }
 
+
+
+.blog p {
+	@apply !text-gray-800/90 pb-3 leading-[170%] xl:pb-3.5 xl:!leading-[180%];
+}
+
+.blog p span {
+	@apply !text-gray-800/90;
+}
+.blog h2 {
+	@apply pb-7 xl:pb-10 xl:pt-3;
+}
+.blog h2 strong {
+	@apply !text-2xl xl:!text-3xl font-medium !text-yellow-500;
+}
+.blog h3 {
+	@apply py-3 ;
+}
+.blog h3 strong {
+	@apply !text-2xl xl:!text-3xl font-medium !text-gray-800;
+}
+
+.blog ol li[data-list='bullet'] {
+	@apply text-gray-800/90 list-disc  ;
+}
+
+.blog ol li span {
+	@apply !text-gray-800/90;
+}
+.blog ol li {
+	@apply !text-gray-800/90 my-1.5 ;
+}
+
+.blog ol {
+	@apply text-gray-800/90  py-1 sm:px-4  ml-4;
+}
+
+
 @keyframes rotation {
 	0% {
 		transform: rotate(0deg);

@@ -11,7 +11,7 @@ import Modal from './Modal'
 import SubmitButton from './SubmitButton'
 import DeleteButton from './DeleteButton'
 import LoadingPortal from './LoadingPortal'
-import { deleteShort } from '@/app/_actions/mutation'
+import { deleteShort, updateShort } from '@/app/_actions/mutation'
 
 function EditShortModal({ short }) {
 	const {
@@ -35,15 +35,13 @@ function EditShortModal({ short }) {
 	if (openModal != `edit-${short.id}`) return null
 
 	async function onSubmit(data) {
-		console.log(data)
-		// const result = await createShort(data)
-		// if (result.error) {
-		//     toast.error(result.error)
-		// } else {
-		//     console.log(result)
-		//     toast.success('Skrót został dodany')
-		//     reset()
-		// }
+		const result = await updateShort(data, short.id)
+		if (result.error) {
+			toast.error(result.error)
+		} else {
+			toast.success('Skrót został edytowany')
+			closeModal()
+		}
 	}
 
 	const handleDelete = e => {
@@ -63,7 +61,7 @@ function EditShortModal({ short }) {
 
 	return (
 		<>
-			{isSubmitting || (pending && <LoadingPortal information="Trwa aktualizowanie" />)}
+			{(isSubmitting || pending) && <LoadingPortal information="Trwa aktualizowanie" />}
 			<Modal modalRef={modalRef} closeModal={closeModal} buttonId="edit-short-modal">
 				<form className="w-full p-8 xl:px-12" onSubmit={handleSubmit(onSubmit)}>
 					<div className="w-full  flex flex-wrap   gap-7  pb-4">
