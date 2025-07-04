@@ -48,9 +48,9 @@ function ContactSection() {
 						<div className="text-center ">
 							<p className="text-gray-900 font-semibold text-xl mb-2">Telefon</p>
 							<Link
-								href="tel:+48888777999"
+								href="tel:+48534075436"
 								className=" p-2 hover:text-yellow-400 duration-300 transition-colors text-gray-700 font-medium xl:text-lg">
-								+48 888 777 999
+								+48 534 075 436
 							</Link>
 						</div>
 					</div>

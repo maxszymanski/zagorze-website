@@ -23,14 +23,15 @@ function PeopleSection() {
 							alt="widok pagórków z lotu ptaka"
 							className="rounded-xl hidden md:block"
 						/>
-						<div className="-mt-10 bg-white shadow-lg shadow-black/20 text-gray-800 rounded-md text-center relative z-20 mx-4 px-4 py-8 text-medium md:px-12 md:mx-12 md:-mt-20 xl:py-12">
-							<p className="text-4xl font-bold mb-4">890</p>
+						<div className="-mt-10 bg-white shadow-lg shadow-black/20 text-gray-800 rounded-md text-center relative z-20 mx-4 px-4 py-8 text-medium md:px-6 md:mx-12 md:-mt-20 xl:py-12">
+							<p className="text-4xl font-bold mb-4">878</p>
 							<p className="text-gray-600 text-lg mb-7">Ilość mieszkańców Sołectwa</p>
-							<p className="text-3xl font-bold mb-4">12000 m2</p>
+							<p className="text-3xl font-bold mb-4">4 270 000 m2</p>
 							<p className="text-gray-600 text-lg mb-7">Powierzchnia Sołectwa</p>
 							<p className="text-[15px] leading-[170%] text-gray-500 md:text-base md:leading-[170%] xl:text-lg xl:leading-[170%]">
-								Zagórze to pierwsza miejscowość na północ od Gryfina, rozciągnięta wzdłuż drogi krajowej
-								nr 31 i zbocza pradoliny Odry. <br /> Powstała w 1748 roku jako osada przy młynie.
+								Zagórze leży na południowym skraju centralnej partii zachodniej części Kotliny
+								Sandomierskiej, w mezoregionie Wysoczyzny Wielicko-Gdowskiej. <br /> Powstała w 1281
+								roku jako folwark benedyktynek.
 							</p>
 						</div>
 					</div>

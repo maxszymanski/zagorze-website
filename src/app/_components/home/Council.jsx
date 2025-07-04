@@ -15,11 +15,11 @@ function Council() {
 				</p>
 				<div className="flex gap-7 justify-evenly flex-wrap pt-12 gap-y-12 lg:pt-16 xl:pt-20">
 					<CouncilMember name="Ryszard Kielar-Ostrowski" role="Sołtys" />
-					<CouncilMember name="Jan Kowalski" role="Radny sołectwa" />
-					<CouncilMember name="Anna Nowak" role="Radna sołectwa" gender="woman" />
-					<CouncilMember name="Anna Nowak" role="Radna sołectwa" gender="woman" />
-					<CouncilMember name="Jan Kowalski" role="Radny sołectwa" />
-					<CouncilMember name="Jan Kowalski" role="Radny sołectwa" />
+					<CouncilMember name="Zygmunt Fiołek" role="Radny sołectwa" />
+					<CouncilMember name="Barbara Wdaniec" role="Radna sołectwa" gender="woman" />
+					<CouncilMember name="Agnieszka Pyrz" role="Radna sołectwa" gender="woman" />
+					<CouncilMember name="Piotr Sikora" role="Radny sołectwa" />
+					<CouncilMember name="Michał Ryś" role="Radny sołectwa" />
 				</div>
 			</div>
 		</section>

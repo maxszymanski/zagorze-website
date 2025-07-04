@@ -5,7 +5,7 @@ const navLinks = [
 	{ href: '/historia', name: 'Historia' },
 	{ href: '/galeria', name: 'Galeria' },
 	{ href: '/aktualnosci', name: 'Aktualności' },
-	{ href: '/kontak', name: 'Kontakt' },
+	{ href: '/kontakt', name: 'Kontakt' },
 ]
 
 function FooterNav() {

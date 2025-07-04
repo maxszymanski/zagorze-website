@@ -15,9 +15,9 @@ function FooterContact() {
 				</li>
 				<li>
 					<Link
-						href="tel:+48888777999"
+						href="tel:+48534075436"
 						className="mb-2 p-2 hover:text-yellow-400 duration-300 transition-colors flex items-center gap-3">
-						<CiPhone className="size-7" /> +48 888 777 999
+						<CiPhone className="size-7" /> +48 534 075 436
 					</Link>
 				</li>
 			</ul>

@@ -13,8 +13,8 @@ async function FooterSocial() {
 				</Link>
 			</div>
 			<p className="max-w-[300px] pl-2 text-center text-sm leading-5 md:max-w-[400px] md:text-left md:text-base lg:max-w-[500px]">
-				Zagórze to pierwsza miejscowość na północ od Gryfina, miejscowość powstała w 1748 roku jako osada
-				kolonizacyjna.
+				Zagórze leży na południowym skraju centralnej partii zachodniej części Kotliny Sandomierskiej,
+				miejscowość powstała w 1281 roku.
 			</p>
 			<div className="flex gap-1 pt-2">
 				<Link href="https://facebook.pl" className="inline-flex p-2" target="_blank" rel="noopener noreferrer">
