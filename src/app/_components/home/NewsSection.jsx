@@ -19,7 +19,7 @@ async function NewsSection() {
 				<p className="text-center text-gray-700 ">Wszystkie aktualności z sołectwa w jednym miejscu</p>
 
 				<div className="pt-12 w-full flex flex-col gap-8 lg:pt-20 lg:gap-12">
-					{posts.map(post => (
+					{posts.slice(0, 3).map(post => (
 						<NewsCard key={post.id} post={post} />
 					))}
 				</div>

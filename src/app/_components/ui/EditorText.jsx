@@ -6,7 +6,7 @@ const EditorText = ({ error, message, control, setContent, placeholder = 'Wprowa
 		<>
 			<div className="w-full flex flex-col">
 				<label htmlFor="long_description" className="block text-dark2 mb-3">
-					Opis kursu <span className="text-red-400">*</span>
+					Tekst postu <span className="text-red-400">*</span>
 				</label>
 				<div className="h-full">
 					<Controller

@@ -1,13 +1,12 @@
 import Footer from '../_components/home/Footer'
 import MoreNews from '../_components/ui/MoreNews'
 import Navs from '../_components/ui/Navs'
-import { getPosts, getShorts } from '../_lib/data-service'
+import { getLatestPosts, getShorts } from '../_lib/data-service'
 
 export const revalidate = 3600
 
 async function layout({ children }) {
-	const posts = await getPosts()
-	const shorts = await getShorts()
+	const [latestPosts, shorts] = await Promise.all([getLatestPosts(), getShorts()])
 
 	return (
 		<>
@@ -26,7 +25,7 @@ async function layout({ children }) {
 					<div className="max-w-7xl px-4 mx-auto md:flex pt-12 lg:pt-20 gap-7 w-full relative lg:gap-10  xl:px-8 ">
 						{children}
 
-						<MoreNews posts={posts} shorts={shorts} />
+						<MoreNews posts={latestPosts} shorts={shorts} />
 					</div>
 				</section>
 			</main>

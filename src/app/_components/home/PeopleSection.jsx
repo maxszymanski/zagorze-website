@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import People from '@/assets/people.webp'
 import PeopleLarge from '@/assets/people-large.webp'
+import PeopleGroup from '@/assets/group.webp'
 import Link from 'next/link'
 
 function PeopleSection() {
@@ -59,14 +59,14 @@ function PeopleSection() {
 						</div>
 						<div className="w-full max-w-[400px] md:max-w-xl mx-auto mt-8 lg:mt-16">
 							<Image
-								src={PeopleLarge}
+								src={PeopleGroup}
 								height={522}
 								width={400}
 								alt="widok pagórków z lotu ptaka"
 								className="rounded-xl block md:hidden"
 							/>
 							<Image
-								src={PeopleLarge}
+								src={PeopleGroup}
 								height={650}
 								width={570}
 								alt="widok pagórków z lotu ptaka"

@@ -2,8 +2,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { blurImage } from '@/app/utils/blurImage'
+import { FaRegCalendarAlt } from 'react-icons/fa'
+import { formattedDate } from '@/app/utils/helpers'
 
 function NewsCard({ large = false, post }) {
+	const format = formattedDate(post.created_at)
+
 	return (
 		<Link
 			href={`/aktualnosci/${post.slug}`}
@@ -41,6 +45,11 @@ function NewsCard({ large = false, post }) {
 					</p>
 				</div>
 			</div>
+			{large && (
+				<p className="text-sm text-gray-700 items-center inline-flex font-semibold  text-left px-4 ">
+					<FaRegCalendarAlt className="mr-2 size-4 text-yellow-600 mb-0.5" /> {format}
+				</p>
+			)}
 		</Link>
 	)
 }

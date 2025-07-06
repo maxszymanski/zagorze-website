@@ -11,28 +11,15 @@ function MoreNews({ posts, shorts }) {
 				<div className="h-[1px] w-8 bg-gray-300"></div>
 			</div>
 
-			<ul className="w-full divide-y divide-stone-300  flex flex-col justify-start border-b border-stone-300">
+			<ul className="w-full divide-y divide-stone-300  flex flex-col justify-start text-center border-b border-stone-300">
 				{posts.map(post => (
 					<NavigationLink
 						key={post.id}
 						href={`/aktualnosci/${post.slug}`}
-						restClass="!text-left truncate overflow-ellipsis whitespace-nowrap   ">
+						restClass=" truncate overflow-ellipsis whitespace-nowrap   ">
 						{post.title}
 					</NavigationLink>
 				))}
-				<NavigationLink href="/" restClass="!text-left truncate overflow-ellipsis whitespace-nowrap   ">
-					Wigilia w Sołectwie
-				</NavigationLink>
-
-				<NavigationLink href="/" restClass="!text-left truncate overflow-ellipsis whitespace-nowrap   ">
-					Dzień Dziecka
-				</NavigationLink>
-				<NavigationLink href="/" restClass="!text-left truncate overflow-ellipsis whitespace-nowrap  ">
-					Zalecamy objazd
-				</NavigationLink>
-				<NavigationLink href="/" restClass="!text-left truncate overflow-ellipsis whitespace-nowrap   ">
-					Angry Drone Gryfino – nie tylko zdjęcia
-				</NavigationLink>
 			</ul>
 
 			<div className="flex items-center justify-center gap-3 pb-6 pt-10">

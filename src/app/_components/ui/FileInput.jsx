@@ -69,7 +69,7 @@ function FileInput({
 		<div className={` flex flex-col w-full  md:max-w-[700px] max-w-[330px] self-center`}>
 			<div>
 				<label htmlFor={name} className={`block text-dark2 mb-1`}>
-					Obraz kursu <span className="text-red-400">*</span>
+					Obraz postu <span className="text-red-400">*</span>
 				</label>
 			</div>
 			<div className="relative w-full ">

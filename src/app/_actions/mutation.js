@@ -140,7 +140,7 @@ export async function createShort(data) {
 	}
 
 	revalidateTag('shorts')
-	revalidatePath('panel/na-skroty')
+	revalidatePath('/panel/na-skroty')
 	return { success: true }
 }
 
@@ -167,7 +167,7 @@ export async function updateShort(data, shortId) {
 		}
 	}
 	revalidateTag('shorts')
-	revalidatePath('panel/na-skroty')
+	revalidatePath('/panel/na-skroty')
 	return { success: true }
 }
 
@@ -190,6 +190,45 @@ export async function deleteShort(shortId) {
 	}
 	revalidateTag('shorts')
 
-	revalidatePath('panel/na-skroty')
+	revalidatePath('/panel/na-skroty')
+	revalidatePath('/')
 	return { success: true }
+}
+
+export async function addImages(files) {
+	const supabase = await createClient()
+
+	for (const file of files) {
+		const uniqueSuffix = `${Date.now()}_${Math.random().toString(36).substring(2, 8)}`
+
+		const filepath = `${uniqueSuffix}_${file.name}`
+
+		const error = await supabase.storage.from('gallery').upload(filepath, file)
+
+		if (error) {
+			console.log(`Błąd podczas przesyłania pliku: ${filepath}`)
+		}
+	}
+
+	revalidatePath('/galeria')
+	revalidatePath('/')
+
+	return 'Wszystkie pliki zostały przesłane pomyślnie.'
+}
+
+export async function getImages() {
+	const supabase = await createClient()
+
+	const { data, error } = await supabase.storage.from('gallery').list('', { limit: 100, offset: 0 })
+
+	if (error) {
+		console.error('Błąd pobierania plików:', error)
+		return []
+	}
+
+	const urls = data
+		.filter(({ name }) => name && !name.includes('.emptyFolderPlaceholder'))
+		.map(({ name }) => supabase.storage.from('gallery').getPublicUrl(name).data.publicUrl)
+
+	return urls
 }

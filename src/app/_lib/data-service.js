@@ -11,6 +11,18 @@ export async function getPosts() {
 	}
 	return data
 }
+export async function getLatestPosts() {
+	const { data, error } = await supabase
+		.from('posts')
+		.select('id, title, slug')
+		.order('created_at', { ascending: false })
+		.limit(5)
+
+	if (error) {
+		return []
+	}
+	return data
+}
 export async function getPostBySlug(slug) {
 	const { data, error } = await supabase.from('posts').select('*').eq('slug', slug).single()
 

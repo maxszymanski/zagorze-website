@@ -1,6 +1,7 @@
 import { MdArticle, MdDashboard, MdSignpost } from 'react-icons/md'
 import { IoMdSettings } from 'react-icons/io'
 import { FaPlus } from 'react-icons/fa6'
+import { RiImageAddFill } from 'react-icons/ri'
 import PanelLinkNav from './PanelLinkNav'
 
 function PanelNavigation() {
@@ -25,6 +26,10 @@ function PanelNavigation() {
 				<PanelLinkNav href="/panel/dodaj-post">
 					<FaPlus className="size-7 flex-shrink-0 lg:mr-4 lg:size-8" />{' '}
 					<span className="hidden lg:block">Dodaj post</span>
+				</PanelLinkNav>
+				<PanelLinkNav href="/panel/galeria">
+					<RiImageAddFill className="size-7 flex-shrink-0 lg:mr-4 lg:size-8" />{' '}
+					<span className="hidden lg:block">Dodaj zdjęcia</span>
 				</PanelLinkNav>
 				<PanelLinkNav href="/panel/ustawienia">
 					<IoMdSettings className="size-7 flex-shrink-0 lg:mr-4 lg:size-8" />
