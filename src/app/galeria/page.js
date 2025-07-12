@@ -3,9 +3,9 @@ import Footer from '../_components/home/Footer'
 import PagesHeader from '../_components/ui/PagesHeader'
 import Link from 'next/link'
 import { blurImage } from '../utils/blurImage'
-import { getImages } from '../_actions/mutation'
+import { getImages } from '../_lib/data-service'
 
-export const revalidate = 3600 * 24
+export const revalidate = 3600
 
 async function page() {
 	const images = await getImages()

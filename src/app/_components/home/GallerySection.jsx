@@ -1,6 +1,5 @@
-import { getImages } from '@/app/_actions/mutation'
+import { getImages } from '@/app/_lib/data-service'
 import { blurImage } from '@/app/utils/blurImage'
-import People from '@/assets/people-large.webp'
 import Image from 'next/image'
 import Link from 'next/link'
 

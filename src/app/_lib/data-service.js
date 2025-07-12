@@ -48,3 +48,18 @@ export async function getShorts() {
 	}
 	return data
 }
+
+export async function getImages() {
+	const { data, error } = await supabase.storage.from('gallery').list('', { limit: 100, offset: 0 })
+
+	if (error) {
+		console.error('Błąd pobierania plików:', error)
+		return []
+	}
+
+	const urls = data
+		.filter(({ name }) => name && !name.includes('.emptyFolderPlaceholder'))
+		.map(({ name }) => supabase.storage.from('gallery').getPublicUrl(name).data.publicUrl)
+
+	return urls
+}
